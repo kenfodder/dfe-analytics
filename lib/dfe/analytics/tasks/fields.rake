@@ -9,7 +9,7 @@ namespace :dfe do
     task regenerate_blocklist: :environment do
       File.write(
         Rails.root.join('config/analytics_blocklist.yml'),
-        { shared: DfE::Analytics::Fields.generate_blocklist }.to_yaml
+        { 'shared' => DfE::Analytics::Fields.generate_blocklist }.to_yaml
       )
     end
   end
